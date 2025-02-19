@@ -1,21 +1,22 @@
+# frozen_string_literal: true
+
 class Calculator
-  def add(a, b)
-    a + b
+  def add(num1, num2)
+    num1 + num2
   end
 
-  def subtract(a, b)
-    a - b
+  def subtract(num1, num2)
+    num1 - num2
   end
 
-  def multiply(a, b)
-    a * b
+  def multiply(num1, num2)
+    num1 * num2
   end
 
-  def divide(a, b)
-    if b == 0
-      puts "Error: Division by zero"  # SonarQube should flag this as an issue
-    else
-      a / b
+  def divide(num1, num2)
+    if num2.zero?
+      raise ArgumentError, 'Error: Division by zero' # SonarQube should flag this as an issue
     end
+    num1 / num2
   end
 end
